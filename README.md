@@ -11,7 +11,7 @@ Les deux fichiers de données ne contiennent que le texte des pop-ups et des ré
 Une ligne dans le code d'en-tête de la formation :
 
 ```html
-<script src="https://cdn.jsdelivr.net/gh/ORGANISATION/DEPOT@1/popup.js" data-donnees="https://raw.githubusercontent.com/ORGANISATION/DEPOT/main/donnees.json" async></script>
+<script src="https://cdn.jsdelivr.net/gh/mezaelle-peda/popups-peda@1/popup.js" data-donnees="https://raw.githubusercontent.com/mezaelle-peda/popups-peda/main/donnees.json" async></script>
 ```
 
 `reglages.json` est lu à côté de `donnees.json` (même dossier), sauf si `data-reglages` donne une autre adresse.
@@ -43,6 +43,8 @@ Une ligne dans le code d'en-tête de la formation :
 
 1. Déposer le nouveau `popup.js` sur `main`
 2. Créer une version (release) avec un numéro suivant : `v1.1.0`, `v1.2.0`... (`@1` dans l'appel sert toujours la plus récente des `v1.x.x`)
-3. Ouvrir `https://purge.jsdelivr.net/gh/ORGANISATION/DEPOT@1/popup.js` pour vider le cache de jsDelivr
+3. Ouvrir `https://purge.jsdelivr.net/gh/mezaelle-peda/popups-peda@1/popup.js` pour vider le cache de jsDelivr
+
+Un navigateur qui a déjà chargé `popup.js` peut garder l'ancienne version jusqu'à 7 jours (cache indiqué par jsDelivr pour `@1`) : une retouche d'apparence se répand donc en quelques jours. Une correction urgente passe par une ligne d'appel en version exacte (`@1.1.0`) dans les espaces.
 
 Retour arrière : publier une version suivante avec l'ancien code, puis vider le cache. Un changement qui casse l'appel (nouveaux attributs, autre format) prend `v2.0.0` et une nouvelle ligne d'appel.
